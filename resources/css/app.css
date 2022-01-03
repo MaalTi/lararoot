@@ -1,0 +1,62 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/***
+**** Global
+***/
+
+
+/* Alpinne */
+
+[x-cloak] {
+    display: none !important;
+}
+
+
+/* SweetAlert2 */
+
+body.swal2-shown>[aria-hidden="true"] {
+    transition: 0.1s filter;
+    filter: blur(10px);
+}
+
+.colored-toast.swal2-icon-success {
+    @apply bg-lime-600 !important;
+}
+
+.colored-toast.swal2-icon-error {
+    @apply bg-red-600 !important;
+}
+
+.colored-toast.swal2-icon-warning {
+    @apply bg-amber-600 !important;
+}
+
+.colored-toast.swal2-icon-info {
+    @apply bg-sky-600 !important;
+}
+
+.colored-toast.swal2-icon-question {
+    @apply bg-cyan-600 !important;
+}
+
+.colored-toast .swal2-title {
+    @apply text-white;
+}
+
+.colored-toast .swal2-close {
+    @apply text-white;
+}
+
+.colored-toast .swal2-html-container {
+    @apply text-white;
+}
+
+
+/* Content */
+
+
+/***
+**** Page d'accueil
+***/
