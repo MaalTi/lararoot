@@ -136,3 +136,50 @@ window.formatInput = function(e) {
         e.value = formatStrings(e.value);
     }
 };
+
+function field() {
+    return {
+        format: function(e) {
+            formatInput(e)
+        },
+    }
+}
+
+function selects() {
+    return {
+        inp: "",
+        search: "",
+        list: [],
+        show: false,
+
+        init: async function() {
+            const that = this
+            await axios.get('some.url.com')
+                .then(function(data) {
+                    // that.list = data
+                    that.list = ['a', 'b', 'c', 'd', 'efd', 'hab', 'eez']
+                })
+                .catch(function(err) {
+                    console.log(err)
+                })
+        },
+        toggleList: function() {
+            this.show = !this.show
+        },
+        deleteItem: function() {
+            this.inp = ""
+        },
+        setItem: function(e) {
+            this.inp = e
+        },
+        filterItems: function() {
+            if (this.search === "") {
+                return this.list
+            } else {
+                return this.list.filter((item) => {
+                    return item.toLowerCase().includes(this.search.toLowerCase());
+                })
+            }
+        }
+    }
+}
