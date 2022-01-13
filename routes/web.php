@@ -48,8 +48,8 @@ Route::prefix(LaravelLocalization::setLocale())->middleware(['localize'])->group
 
 // Services routes
 Route::get('/callback/{provider}',[SocialLoginController::class,'providerCallback']);
-// Route::get('social-auth/{provider}/callback',[SocialLoginController::class,'providerCallback']);
-Route::get('social-auth/{provider}',[SocialLoginController::class,'redirectToProvider'])->name('social.redirect');
+Route::get('social-auth/{provider}/callback',[SocialLoginController::class,'providerCallback']);
+
 Route::get('/pdf/{locale}/{view}', [PdfFromPageController::class, 'PdfMaker'])->name('pdfpage');
 
 // 
